@@ -13,17 +13,6 @@ int n, m;
 vector<dimension> boxes;
 
 void sort(int &a, int &b, int &c) {
-  // many many ways to do it
-  // first way 
-  // int x = max(a, max(b, c));
-  // int z = min(a, min(b, c));
-  // int y = a + b + c - (x + y);
-  // a = x, b = y, c = z;
-  // second way is using nested if
-  // if( a > b && a > c) {
-  
-  // }
-  // third way, a much simpler way
   if(a < b) swap(a, b);
   if(a < c) swap(a, c);
   if(b < c) swap(b, c);
@@ -36,7 +25,6 @@ int find_min_vol(int a, int b, int c) {
     int a2 = box.a, b2 = box.b, c2 = box.c;
     sort(a2, b2, c2);
     if(a <= a2 && b <= b2 && c <= c2) {
-      // the box fits the item
       min_vol = min(min_vol, a2*b2*c2);
     }
   }
